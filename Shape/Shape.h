@@ -8,10 +8,6 @@
 class Shape
 {
 
-protected:
-
-	std::string m_name;
-
 public:
 
 	// Non-virtual members
