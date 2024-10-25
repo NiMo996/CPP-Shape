@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	double sideA, sideB, sideC;
+	float sideA, sideB, sideC;
 	cout << "Please enter the side lengths of the triangle: " << endl;
 	cout << "Side A: ";
 	cin >> sideA;
@@ -25,7 +25,7 @@ int main()
 
 	cout << endl << endl;
 
-	double radius = 0;
+	float radius = 0;
 	cout << "Please enter the radius of the circle: ";
 	cin >> radius;
 

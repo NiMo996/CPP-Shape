@@ -8,25 +8,25 @@
 class Shape
 {
 
-protected:
-
-	std::string m_name;
-
 public:
 
 	// Non-virtual members
 
 	Shape() { }
+	Shape(const Shape&) = delete;
 	virtual ~Shape() { }
 
-	void Display();
+	Shape& operator=(const Shape&) = delete;
+
+	void Display() const;
 
 
 	// Virtual members
 
-	virtual std::string GetType() { return "Shape"; }
+	virtual std::string GetType() const { return "Shape"; }
 
-	virtual double GetArea() = 0;
+	virtual float GetArea() const = 0;
 
-	virtual double GetPerimeter() = 0;
+	virtual float GetPerimeter() const = 0;
+
 };

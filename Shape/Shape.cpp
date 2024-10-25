@@ -6,7 +6,7 @@
 #include "Shape.h"
 
 
-void Shape::Display()
+void Shape::Display() const
 {
 	std::cout << "The area of this " << GetType() << " is " << GetArea() << std::endl;
 	std::cout << "The perimeter of this " << GetType() << " is " << GetPerimeter() << std::endl;

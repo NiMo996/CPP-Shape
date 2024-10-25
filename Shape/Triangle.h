@@ -9,23 +9,30 @@ class Triangle : public Shape
 {
 private:
 
-	double m_sideA = 1;
-	double m_sideB = 1;
-	double m_sideC = 1;
+	float m_sideA = 1;
+	float m_sideB = 1;
+	float m_sideC = 1;
 
 public:
 
 	Triangle() { }
-	Triangle(double sideA, double sideB, double sideC);
+	Triangle(const float sideA, const float sideB, const float sideC);
 
-	virtual void SetSideA(double size);
-	virtual void SetSideB(double size);
-	virtual void SetSideC(double size);
+	virtual float GetSideA() const { return m_sideA; }
+	virtual float GetSideB() const { return m_sideB; }
+	virtual float GetSideC() const { return m_sideC; }
+
+	// Mutators
+	virtual void SetSideA(const float size);
+	virtual void SetSideB(const float size);
+	virtual void SetSideC(const float size);
+
+	virtual void SetSides(const float a, const float b, const float c);
 
 	virtual std::string GetType() { return "Triangle"; }
 
-	virtual double GetArea();
+	virtual float GetArea() const;
 
-	virtual double GetPerimeter();
+	virtual float GetPerimeter() const;
 
 };

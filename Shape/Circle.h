@@ -9,16 +9,20 @@ class Circle : public Shape
 {
 private:
 
-	double m_radius = 1;
+	float m_radius = 1;
 
 public:
 
 	Circle() { }
-	Circle(double radius) { SetRadius(radius); }
+	Circle(float radius) { SetRadius(radius); }
 	virtual ~Circle() { }
 
-	virtual void SetRadius(double radius);
+	// Accessor
+	virtual float GetRadius() { return m_radius; }
 
-	// define additional methods here:
+	// Mutator
+
+	// Define additional methods here:
+
 
 };

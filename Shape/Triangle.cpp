@@ -6,43 +6,50 @@
 #include "Triangle.h"
 
 
-Triangle::Triangle(double sideA, double sideB, double sideC)
+Triangle::Triangle(const float sideA, const float sideB, const float sideC)
 {
-	SetSideA(sideA);
-	SetSideB(sideB);
-	SetSideC(sideC);
+	SetSides(sideA, sideB, sideC);
 }
 
 
-void Triangle::SetSideA(double size)
+void Triangle::SetSideA(const float size)
 { 
 	if (size > 0) m_sideA = size;
 	else m_sideA = 1;
 }
 
 
-void Triangle::SetSideB(double size)
+void Triangle::SetSideB(const float size)
 {
 	if (size > 0) m_sideB = size;
 	else m_sideB = 1;
 }
 
 
-void Triangle::SetSideC(double size)
+void Triangle::SetSideC(const float size)
 {
 	if (size > 0) m_sideC = size;
 	else m_sideC = 1;
 }
 
 
-double Triangle::GetArea()
+
+void Triangle::SetSides(const float a, const float b, const float c)
 {
-	double p = GetPerimeter() / 2;
-	return sqrt(p * (p - m_sideA) * (p - m_sideB) * (p - m_sideC));
+	SetSideA(a);
+	SetSideB(b);
+	SetSideC(c);
 }
 
 
-double Triangle::GetPerimeter()
+float Triangle::GetArea() const
+{
+	float p = GetPerimeter() / 2;
+	return (float)sqrt(p * (p - m_sideA) * (p - m_sideB) * (p - m_sideC));
+}
+
+
+float Triangle::GetPerimeter() const
 {
 	return m_sideA + m_sideB + m_sideC;
 }
